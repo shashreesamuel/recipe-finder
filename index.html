@@ -12,18 +12,26 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
     <main>
       <h1 class="title">Recipe Finder</h1>
-      <input
-        class="input-field"
-        type="text"
-        placeholder="Enter the name of a recipe..."
-      />
+      <div class="flex">
+        <div>
+          <input
+            class="input-field"
+            type="text"
+            placeholder="Search for recipes..."
+          />
+        </div>
+        <div><i class="search-btn" data-feather="search"></i></div>
+      </div>
       <li class="result"></li>
-      <input class="btn-submit" type="submit" value="Submit" />
     </main>
     <script type="module" src="script.js"></script>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
