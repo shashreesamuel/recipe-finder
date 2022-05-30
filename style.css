@@ -44,7 +44,7 @@ body{
 
 .search-btn{
   position: relative;
-  right: 2em;
+  right: 0;
   display: flex;
   place-items: center;
   color: var(--title-color);
@@ -56,4 +56,23 @@ body{
 
 input{
   font-weight: 300;
+}
+
+.error-message{
+  margin-inline: 4em;
+  text-align: center;
+  animation: moveUp 2s ease-in-out;
+}
+
+@keyframes moveUp {
+  0%{
+    opacity: 0;
+    transform: translateY(0%);
+    clip-path: inset(0 0 0 0);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(-30%);
+    clip-path: inset(0 0 100% 0);
+  }
 }

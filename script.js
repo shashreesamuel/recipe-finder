@@ -1,10 +1,10 @@
 import data from "./data.json" assert { type: "json" };
 let inputField = document.querySelector(".input-field");
 let result = document.querySelector(".result");
+let errorMessage = document.querySelector(".error-message");
 let searchButton = document.querySelector(".search-btn");
 let unorderedList = document.querySelector("ul");
 let closeBtn = document.querySelector(".close-btn");
-
 // if the value specified by the user matches the name of a value in the data array.
 
 searchButton.addEventListener("click", () => {
@@ -15,7 +15,10 @@ searchButton.addEventListener("click", () => {
     if (inputField.value == val.name) {
       result.innerHTML = val.name;
     } else {
-      result.innerHTML = `There is no recipe with the name of "${inputField.value}"`;
+      errorMessage.innerHTML = `There is no recipe with the name of "${inputField.value}"`;
+      setTimeout(function () {
+        errorMessage.innerHTML = "";
+      }, 5000);
     }
   });
 });
@@ -30,4 +33,4 @@ closeBtn.addEventListener("click", () => {
   removeItem();
 });
 
-
+// ? Add Item Function
