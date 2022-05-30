@@ -1,7 +1,9 @@
 import data from "./data.json" assert { type: "json" };
-let searchButton = document.querySelector(".search-btn");
 let inputField = document.querySelector(".input-field");
 let result = document.querySelector(".result");
+let searchButton = document.querySelector(".search-btn");
+let unorderedList = document.querySelector("ul");
+let closeBtn = document.querySelector(".close-btn");
 
 // if the value specified by the user matches the name of a value in the data array.
 
@@ -12,13 +14,20 @@ searchButton.addEventListener("click", () => {
   data.map((val) => {
     if (inputField.value == val.name) {
       result.innerHTML = val.name;
+    } else {
+      result.innerHTML = `There is no recipe with the name of "${inputField.value}"`;
     }
   });
 });
 
+function removeItem() {
+  unorderedList.removeChild(result);
+}
 
-//TODO Adding an event listener to the search button
+// ? Remove Item Function
 
-searchButton.addEventListener('click', () => {
-  console.log("The button has been clicked")
-})
+closeBtn.addEventListener("click", () => {
+  removeItem();
+});
+
+
