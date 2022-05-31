@@ -28,51 +28,11 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
-.input-field{
-  background: transparent;
-  margin-inline-start: .5em;
-  font-weight: 400;
+.container__button{
+  background-color: black;
+  color: white;
 }
 
 .flex{
-  border: .1em solid currentColor;
-  margin-inline: 2em;
-  display: flex;
-  place-items: center;
-  padding: .9em;
-}
-
-.search-btn{
-  position: relative;
-  right: 0;
-  display: flex;
-  place-items: center;
-  color: var(--title-color);
-}
-
-.input-field:placeholder{
-  font-weight: 600;
-}
-
-input{
-  font-weight: 300;
-}
-
-.error-message{
-  margin-inline: 4em;
-  text-align: center;
-  animation: moveUp 2s ease-in-out;
-}
-
-@keyframes moveUp {
-  0%{
-    opacity: 0;
-    transform: translateY(0%);
-    clip-path: inset(0 0 0 0);
-  }
-  100%{
-    opacity: 1;
-    transform: translateY(-30%);
-    clip-path: inset(0 0 100% 0);
-  }
+  display: row;
 }
