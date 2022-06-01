@@ -15,33 +15,18 @@
   </head>
   <body>
     <main class="container">
-      <h1 class="container__title">Recipe Finder</h1>
-      <input
-        class="container__input"
-        type="text"
-        onchange="processInput()"
-        placeholder="Search for recipes"
-      />
+      <div class="container__content">
+        <h1 class="container__title">Recipe Finder</h1>
+        <input
+          class="container__input"
+          type="text"
+          onchange="processInput()"
+          placeholder="Search for recipes"
+        />
+      </div>
       <h1 class="recipe-name"></h1>
       <p class="recipe-ingredients"></p>
-      <div class="flex">
-        <div>
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="7.5" cy="7.5" r="6" stroke="black" stroke-width="3" />
-          </svg>
-        </div>
-        <div>
-          <p class="recipe-ingredient"></p>
-        </div>
-      </div>
       <p class="recipe-method"></p>
-      <p class="recipe-description"></p>
     </main>
     <script src="script.js"></script>
   </body>

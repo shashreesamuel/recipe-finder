@@ -1,6 +1,6 @@
 let containerInput = document.querySelector(".container__input");
 let recipeName = document.querySelector('.recipe-name')
-let recipeIngrdients = document.querySelector('.recipe-ingredients')
+let recipeIngredients = document.querySelector('.recipe-ingredients')
 let recipeMethod = document.querySelector('.recipe-method')
 
 async function processInput() {
@@ -10,23 +10,21 @@ async function processInput() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Host": "recipe-by-api-ninjas.p.rapidapi.com",
+        "X-RapidAPI-Host": "recipesapi2.p.rapidapi.com",
         "X-RapidAPI-Key": "dde48e2d97mshd0defcb83855200p195594jsn3d9c733fe6c4",
       },
     };
 
     const data = await fetch(
-      `https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=${containerInput.value}&offset=1`,
+      `https://recipesapi2.p.rapidapi.com/recipes/${containerInput.value}`,
       options
     )
       .then((response) => response.json())
-      .catch(err => console.error(err));
-
-      data.map(({title, ingredients, instructions}) => {
-        recipeName.innerHTML = title;
-        recipeMethod.innerHTML = instructions
-        recipeIngrdients.innerHTML = ingredients;
-      })
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+        // recipeName.textContent = data.name;
+        // recipeMethod.innerHTML = data.instructions;
+        // recipeIngredients.innerHTML = data.ingredients;
     }
 }
 
