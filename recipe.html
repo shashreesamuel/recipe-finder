@@ -17,16 +17,15 @@
     <main class="container">
       <div class="container__content">
         <h1 class="container__title">Recipe Finder</h1>
+        <input type="submit" onclick="processInput()" value="Submit">
         <input
           class="container__input"
           type="text"
-          onchange="processInput()"
+          onclick="processInput()"
           placeholder="Search for recipes"
         />
       </div>
-      <h1 class="recipe-name"></h1>
-      <p class="recipe-ingredients"></p>
-      <p class="recipe-method"></p>
+      <div id="recipes"></div>
     </main>
     <script src="script.js"></script>
   </body>
